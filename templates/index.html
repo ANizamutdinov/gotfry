@@ -1,0 +1,25 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+<main class="px-3">
+
+    {{ range . }}
+    <div class="alert alert-light">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Anons }}</p>
+        <a href="/post/{{ .Id }}" class="btn btn-dark">Read more</a>
+    </div>
+    {{ else }}
+    <p class="lead">There is no ye articles</p>
+    {{ end }}
+
+    <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary">Get more</a>
+    </p>
+
+</main>
+
+{{ template "footer" }}
+
+{{ end }}
